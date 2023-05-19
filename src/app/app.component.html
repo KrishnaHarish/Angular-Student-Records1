@@ -1,0 +1,22 @@
+<h1>Student Records</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Math Score</th>
+    <th>Science Score</th>
+    <th>English Score</th>
+    <th>Strongest Subject</th>
+    <th>Average Score</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{ student.name }}</td>
+    <td>{{ student.mathScore }}</td>
+    <td>{{ student.scienceScore }}</td>
+    <td>{{ student.englishScore }}</td>
+    <td>{{ getStrongestSubject(student) }}</td>
+    <td>{{ calculateAverage(student) | number: '1.2-2' }}</td>
+  </tr>
+</table>
+
+<p>Total Average Score: {{ getTotalAverage() | number: '1.2-2' }}</p>
